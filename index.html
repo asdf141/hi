@@ -6,19 +6,22 @@
         <title>Hi on GitHub</title>
         <style>
             span {
-                background-color: crimson;
+                background-color: rgb(20, 213, 220);
             }
         </style>
     </head>
-    <body>
+    <body id="counter" style="user-select: none">
         <h1>gh pages</h1>
-        <span>Count: </span>
-        <span id="counter">0</span>
+        <div>
+            <span>Count: </span>
+            <span id="display">0</span>
+        </div>
         <script>
-            let counterEl = document.getElementById("counter");
-            counterEl.addEventListener("click", () => {
-                counterEl.innerText += 1;
-            });
+            document
+                .getElementById("counter")
+                .addEventListener("click", (e) => {
+                    document.getElementById("display").innerHTML = Number(document.getElementById("display").innerHTML) + 1;
+                });
         </script>
     </body>
 </html>
